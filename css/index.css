@@ -24,12 +24,3 @@
 .table-striped > tbody > tr:nth-of-type(odd) {
   background: #C8E6C9;
 }
-
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-#map {
-  height: 100%;
-}
