@@ -1,14 +1,14 @@
 // var mapsKey = myKey.apiKey;
 
 // backend logic
-var parks = [
-  { parkName: "WoodLawn",
-    lat: 45.5718618,
-    lng: -122.6539132
-  },
 
+// var parks = [
+//   { parkName: "WoodLawn",
+//     lat: 45.5718618,
+//     lng: -122.6539132
+//   }
+// ];
 
-];
 var userLocation = {lat: 45.5364789, lng: -122.3940587}
 var woodLawn = {lat: 45.5718618, lng: -122.6539132}
 var map;
@@ -19,12 +19,26 @@ function initMap() {
     zoom: 10
   });
 
+  var contentString = '<div id="content">' +
+  '<span><img src="img/sandlot.jpg"></span>'  +
+  '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
   var marker = new google.maps.Marker({
           position: woodLawn,
           map: map,
           title: 'WoodLawn Park'
-        });
+  });
+
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+
 }
+
 
 // frontend logic
 $(document).ready(function() {
