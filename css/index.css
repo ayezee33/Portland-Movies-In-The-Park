@@ -1,8 +1,26 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.btn-primary {
+  background: #009688;
+  border: none;
 }
-#map {
-  height: 100%;
+.map-embed {
+  height: 70vh;
+}
+
+.full-width {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                rgba(0,0,0,0.55) url("../img/movie-park.jpg") no-repeat center center;
+  background-size: cover;
+  color: white;
+}
+.table tr > td {
+  border: none;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background: #C8E6C9;
 }

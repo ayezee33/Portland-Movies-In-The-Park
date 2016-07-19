@@ -3,16 +3,18 @@
 // backend logic
 
 // var parks = [
-//   { parkName: "WoodLawn",
-//     lat: 45.5718618,
-//     lng: -122.6539132
-//   }
-// ];
-
+//              { parkName: "WoodLawn",
+//                parkAddress: "NE 13th Ave & Dekum St",
+//                lat: 45.5718618,
+//                lng: -122.6539132,
+//                movieTitle: "The Sandlot (1993) PG",
+//                showDate: "Sun, July 10"
+//              }
+//            ];
 
 
 // var userLocation = {lat: 45.5364789, lng: -122.3940587}
-var woodLawn = {lat: 45.5718618, lng: -122.6539132}
+var woodLawn = {lat: 45.5718618, lng: -122.6539132};
 var map;
 
 function initMap() {
@@ -21,7 +23,10 @@ function initMap() {
     zoom: 10
   });
 
-  var userWindow = new google.maps.InfoWindow({map: map});
+  // needs a differentiating icon
+  var userIcon = new google.maps.Marker({
+    map: map
+  });
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -31,18 +36,18 @@ function initMap() {
         lng: position.coords.longitude
       };
 
-      userWindow.setPosition(pos);
-      userWindow.setContent('Location found.');
+      userIcon.setPosition(pos);
+      //userWindow.setContent('Location found.');
       map.setCenter(pos);
     }, function() {
-      handleLocationError(true, userWindow, map.getCenter());
+      handleLocationError(true, userIcon, map.getCenter());
     });
   } else {
     // Browser doesn't support Geolocation
-    handleLocationError(false, userWindow, map.getCenter());
+    handleLocationError(false, userIcon, map.getCenter());
   }
 
-  function handleLocationError(browserHasGeolocation, userWindow, pos) {
+  function handleLocationError(browserHasGeolocation, userIcon, pos) {
         userWindow.setPosition(pos);
         userWindow.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
