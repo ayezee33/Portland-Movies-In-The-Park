@@ -27,7 +27,7 @@ var parks = [
                movieTitle: "Star Wars – The Force Awakens (2015) PG-13",
                showDate: "Fri, July 15"
              },
-             { parkName: "WoodLawn",
+             { parkName: "Glenhaven Park",
                parkAddress: "NE 82nd Ave & Siskiyou St",
                position: {lat: 45.5435703, lng: -122.5831002},
                movieTitle: "Raiders of the Lost Ark (1981) PG",
@@ -41,7 +41,7 @@ var parks = [
              },
              { parkName: "Denorval Unthank Park",
                parkAddress: "510 N Shaver St",
-               position: {lat: 45.5514141, lng: -122.6736975};
+               position: {lat: 45.5514141, lng: -122.6736975},
                movieTitle: "Avengers Age of Ultron (2015) PG-13",
                showDate: "Sun, July 17"
              },
@@ -64,6 +64,8 @@ var parks = [
                showDate: "Sat, July 23"
              },
            ];
+
+
 var map;
 
 function initMap() {
@@ -103,24 +105,38 @@ function initMap() {
                               'Error: Your browser doesn\'t support geolocation.');
       }
 
-  var contentString = '<div id="content">' +
-  '<span><img src="img/sandlot.jpg"></span>'  +
-  '</div>';
+  // var contentString = '<div id="content">' +
+  // '<img src="img/sandlot.jpg">'  +
+  // '</div>';
+  //
+  // var infowindow = new google.maps.InfoWindow({
+  //         content: contentString
+  //       });
 
-  var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
+  parks.forEach(function(park) {
 
-  var marker = new google.maps.Marker({
-          position: woodLawn,
-          map: map,
-          title: 'WoodLawn Park'
-  });
+    var contentString = '<div id="content">' +
+    '<h5>' + park.movieTitle + '</h5>' +
+    '<h5>' + park.showDate + '</h5>' +
+    '<h6>' + park.parkName + '</h6>' +
+    '<h6>' + park.parkAddress + '</h6>' +
+    '<img src="#">'  +
+    '</div>';
 
-  marker.addListener('click', function() {
-    infowindow.open(map, marker);
-  });
+    var infowindow = new google.maps.InfoWindow({
+            content: contentString
+          });
 
+    var marker = new google.maps.Marker({
+            position: park.position,
+            map: map,
+            title: park.movieTitle
+    });
+
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  })
 }
 
 
