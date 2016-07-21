@@ -105,14 +105,6 @@ function initMap() {
                               'Error: Your browser doesn\'t support geolocation.');
       }
 
-  // var contentString = '<div id="content">' +
-  // '<img src="img/sandlot.jpg">'  +
-  // '</div>';
-  //
-  // var infowindow = new google.maps.InfoWindow({
-  //         content: contentString
-  //       });
-
   parks.forEach(function(park) {
 
     var contentString = '<div id="content">' +
@@ -134,10 +126,17 @@ function initMap() {
     });
 
     marker.addListener('click', function() {
-      infowindow.open(map, marker);
+      if(!marker.open){
+        infowindow.open(map,marker);
+        marker.open = true;
+      } else {
+        infowindow.close();
+        marker.open = false;
+      }
     });
   })
 }
+
 
 
 // frontend logic
