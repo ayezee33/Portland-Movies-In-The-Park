@@ -2,6 +2,18 @@
   background: #009688;
   border: none;
 }
+.btn-outline {
+  background: none;
+  color: #009688;
+  border: 1px solid #009688;
+  padding: 5px 15px;
+  margin: 0 5px;
+}
+.location-btns {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
 .map-embed {
   height: 70vh;
 }
@@ -22,5 +34,11 @@
   border: none;
 }
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background: #C8E6C9;
+  background: #f3f3f3;
+}
+
+footer {
+  background: #009688;
+  color: white;
+  padding: 30px 0;
 }
