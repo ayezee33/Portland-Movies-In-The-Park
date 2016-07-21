@@ -1,6 +1,6 @@
 $(function() {
   $("#southwest, #southeast, #northwest, #northeast").click(function() {
-    $(".se, .sw, .nw, .ne").hide();
+    $(".se, .sw, .nw, .ne, .all").hide();
     $(this).data('clicked', true);
 
       if ($("#southeast").data('clicked')) {
