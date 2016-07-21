@@ -22,5 +22,5 @@
   border: none;
 }
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background: #C8E6C9;
+  background: #f3f3f3;
 }
