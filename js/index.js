@@ -35,7 +35,7 @@ var parks = [
               },
               { parkName: "Hoyt Arboretum",
                 parkAddress: "4000 SW Fairview Blvd",
-                position: {lat: 45.5718618, lng: -122.6539132},
+                position: {lat: 45.5157013, lng: -122.7160505},
                 movieTitle: "Dr. Seuss’ The Lorax (2012) PG",
                 showDate: "Sat, July 16"
               },
