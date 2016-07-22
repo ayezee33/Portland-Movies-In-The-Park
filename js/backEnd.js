@@ -95,5 +95,3 @@ function initMap() {
       });
     });
   }
-
-// frontend logic goes below
