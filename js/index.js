@@ -1,7 +1,8 @@
 // var mapsKey = myKey.apiKey;
 
-// backend logic
+// backend logic goes below
 
+// override MIME type to grab JSON
 $.ajaxSetup({beforeSend: function(xhr){
   if (xhr.overrideMimeType)
   {
@@ -12,19 +13,21 @@ $.ajaxSetup({beforeSend: function(xhr){
 
 var parks = [];
 
+// access the JSON data and place into parks array
 $.getJSON('parks.json', function(data) {
   parks = data.parks;
 });
 
 var map;
 
+// create the initial map centered over Portland
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 45.52, lng: -122.681944},
     zoom: 12
   });
 
-  // needs a differentiating icon
+  // show the user location with blue icon
   var userIcon = new google.maps.Marker({
     map: map,
     icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
@@ -56,8 +59,10 @@ function initMap() {
       'Error: Your browser doesn\'t support geolocation.');
     }
 
+    // for each park
     parks.forEach(function(park) {
 
+      // grab content for park's infowindow
       var contentString = '<div id="content">' +
       '<h5>' + park.movieTitle + '</h5>' +
       '<h5>' + park.showDate + '</h5>' +
@@ -66,16 +71,19 @@ function initMap() {
       '<img src="#">'  +
       '</div>';
 
+      // create infor window using content
       var infowindow = new google.maps.InfoWindow({
         content: contentString
       });
 
+      // create marker for each park
       var marker = new google.maps.Marker({
         position: park.position,
         map: map,
         title: park.movieTitle
       });
 
+      // on marker click show infowindow
       marker.addListener('click', function() {
         if(!marker.open){
           infowindow.open(map, marker);
@@ -88,9 +96,4 @@ function initMap() {
     });
   }
 
-// frontend logic
-
-$(document).ready(function() {
-  // console.log(mapsKey);
-  $("#map").append(map);
-});
+// frontend logic goes below
