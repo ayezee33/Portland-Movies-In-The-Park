@@ -1,3 +1,5 @@
+// frontend logic goes below
+
 $(document).ready(function() {
 
   // if a location button is clicked

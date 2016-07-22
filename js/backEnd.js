@@ -71,7 +71,7 @@ function initMap() {
       '<img src="#">'  +
       '</div>';
 
-      // create infor window using content
+      // create infowindow using content
       var infowindow = new google.maps.InfoWindow({
         content: contentString
       });
