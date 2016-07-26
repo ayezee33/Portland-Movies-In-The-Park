@@ -1,6 +1,19 @@
-.btn-primary {
-  background: #009688;
-  border: none;
+.navbar {
+  border-radius: 0;
+}
+.navbar-nav .nav-item {
+  line-height: 55px;
+}
+.jumbotron {
+  margin-bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44)), rgba(0,0,0,0.44) url("../img/movie-park.jpg") no-repeat center center;
+  background-size: cover;
+  color: white;
+  border-radius: 0;
+  padding: 75px 0 125px 0;
+}
+.map-embed {
+  height: 95vh;
 }
 .btn-outline {
   background: none;
@@ -14,37 +27,28 @@
   margin: 20px auto;
   text-align: center;
 }
-.map-embed {
-  height: 95vh;
-}
-
-.full-width {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.jumbotron {
-  margin-bottom: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), rgba(0,0,0,0.55) url("../img/movie-park.jpg") no-repeat center center;
-  background-size: cover;
-  color: white;
-}
-.table tr > td {
-  border: none;
-}
-.table-striped > tbody > tr:nth-of-type(odd) {
-  background: #f3f3f3;
+@media (max-width: 720px) {
+  .btn-outline {
+    padding: 2px 5px;
+    margin: 0 3px;
+  }
+  .location-btns {
+    text-align: left;
+  }
 }
 
 footer {
-  background: #009688;
+  background: #0275d8;
   color: white;
   padding: 30px 0;
 }
-
+/*Card Styles */
 .card p {
   margin: 0;
   padding: 0;
+}
+.card span.label {
+  margin-right: 5px;
 }
 .park-name {
   font-weight: bold;

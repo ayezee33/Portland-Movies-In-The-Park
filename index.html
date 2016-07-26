@@ -14,11 +14,33 @@
   <title>Portland's Movies in a Park</title>
 </head>
 <body>
+  <!--Navigation-->
+  <nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="#"><img src="img/maps-logo.png" alt=""></a>
+    <ul class="nav navbar-nav pull-sm-right">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
   <div class="jumbotron">
     <div class="container text-lg-center">
       <h1 class="display-2">Movies in the Park</h1>
-      <p class="lead"> We've developed a mapping tool to help you visualize where your next visual experience could be - in a park! </p>
-      <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Find me a movie!</a></p> -->
+      <p class="lead">View the map below to find which movies are playing in a park near you.</p>
+      <p>Sign up and get updated when more movies are added the the schedule.</p>
+      <form class="form-inline">
+        <div class="form-group">
+          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="E-mail">
+        </div>
+        <button type="submit" class="btn btn-primary">Get Notified</button>
+      </form>
     </div>
   </div>
 
@@ -51,17 +73,13 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-6">
-          <form class="form-inline">
-            <input class="form-control" type="text" placeholder="Search">
-            <button class="btn btn-success-outline" type="submit">Search</button>
-          </form>
+
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6">
-          <p class="pull-sm-right">copyright 2016</p>
+          <p class="pull-sm-right">Copyright 2016</p>
         </div>
       </div>
     </div>
   </footer>
-
 </body>
 </html>
