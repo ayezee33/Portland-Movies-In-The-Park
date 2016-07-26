@@ -79,7 +79,7 @@ function initMap() {
         title: park.movieTitle
       });
 
-      // on marker click show infowindow
+      //on marker click show infowindow
       marker.addListener('click', function() {
         if(!marker.open){
           infowindow.open(map, marker);
@@ -95,5 +95,16 @@ function initMap() {
             marker.open = false;
         });
       });
+
+
+
+      $('#movie-cards').append( '<div class="col-sm-12 col-md-6 col-lg-6 all ' + park.quadrant + ' "><div class="card card-block"> ' +
+      '<h4 class="card-title">' + park.movieTitle + '</h4>' +
+      '<p class="park-name">' + park.parkName + '</p>' +
+      '<p>' + park.parkAddress + '</p>' +
+      '<a href="#" class="card-link pull-sm-right">Link</a>' +
+      '<p class="text-muted">' + park.showDate + '</p>' +
+      '</div></div>');
+
     });
   }

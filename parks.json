@@ -4,61 +4,71 @@ jsonpCallback({ "parks":
               "parkAddress": "NE 13th Ave & Dekum St",
               "position": {"lat": 45.5718618, "lng": -122.6539132},
               "movieTitle": "The Sandlot (1993) PG",
-              "showDate": "Sun, July 10"
+              "showDate": "Sun, July 10",
+              "quadrant": "ne"
             },
             { "parkName": "Brentwood Park",
               "parkAddress": "SE 60th & Duke St",
               "position": {"lat": 45.4758258, "lng": -122.604421},
               "movieTitle": "Megamind (2011) PG",
-              "showDate": "Wed, July 13"
+              "showDate": "Wed, July 13",
+              "quadrant": "se"
             },
             { "parkName": "Jackson Middle School",
               "parkAddress": "10625 SW 35th Ave",
               "position": {"lat": 45.4486055, "lng": -122.7166102},
               "movieTitle": "Kung Fu Panda 3 (2016) PG",
-              "showDate": "Thu, July 14"
+              "showDate": "Thu, July 14",
+              "quadrant": "sw"
             },
             { "parkName": "Irving Park",
               "parkAddress": "NE 7th Ave & Fremont St",
               "position": {"lat": 45.546751, "lng": -122.6582078},
               "movieTitle": "Star Wars – The Force Awakens (2015) PG-13",
-              "showDate": "Fri, July 15"
+              "showDate": "Fri, July 15",
+              "quadrant": "ne"
             },
             { "parkName": "Glenhaven Park",
               "parkAddress": "NE 82nd Ave & Siskiyou St",
               "position": {"lat": 45.5435703, "lng": -122.5831002},
               "movieTitle": "Raiders of the Lost Ark (1981) PG",
-              "showDate": "Sat, July 16"
+              "showDate": "Sat, July 16",
+              "quadrant": "ne"
             },
             { "parkName": "Hoyt Arboretum",
               "parkAddress": "4000 SW Fairview Blvd",
               "position": {"lat": 45.5157013, "lng": -122.7160505},
               "movieTitle": "Dr. Seuss’ The Lorax (2012) PG",
-              "showDate": "Sat, July 16"
+              "showDate": "Sat, July 16",
+              "quadrant": "sw"
             },
             { "parkName": "Denorval Unthank Park",
               "parkAddress": "510 N Shaver St",
               "position": {"lat": 45.5514141, "lng": -122.6736975},
               "movieTitle": "Avengers Age of Ultron (2015) PG-13",
-              "showDate": "Sun, July 17"
+              "showDate": "Sun, July 17",
+              "quadrant": "n"
             },
             { "parkName": "George Park",
               "parkAddress": "N Burr Ave & Fessenden St",
               "position": {"lat": 45.5937175, "lng": -122.7413957},
               "movieTitle": "Ferris Bueller's Day Off (1986) PG-13",
-              "showDate": "Wed, July 20"
+              "showDate": "Wed, July 20",
+              "quadrant": "n"
             },
             { "parkName": "Woodstock Park",
               "parkAddress": "SE 47th & Steele St",
               "position": {"lat": 45.4846979, "lng": -122.6166256},
               "movieTitle": "Star Wars – The Force Awakens (2015) PG-13",
-              "showDate": "Fri, July 22"
+              "showDate": "Fri, July 22",
+              "quadrant": "se"
             },
             { "parkName": "Walker Stadium in Lents Park",
               "parkAddress": "SE 92nd & Holgate Blvd",
               "position": {"lat": 45.4883407, "lng": -122.5717723},
               "movieTitle": "42: The Jackie Robinson Story (2013) PG-13",
-              "showDate": "Sat, July 23"
+              "showDate": "Sat, July 23",
+              "quadrant": "se"
             }
           ]
 });
