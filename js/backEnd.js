@@ -55,8 +55,20 @@ function initMap() {
       'Error: Your browser doesn\'t support geolocation.');
     }
 
+    // create global infowindow
+    var infowindow = new google.maps.InfoWindow();
+
     // for each park
     parks.forEach(function(park) {
+
+      // create cards for each park
+      $('#movie-cards').append('<div class="col-sm-12 col-md-6 col-lg-6 all ' + park.quadrant + '">' + '<div class="card card-block"> ' +
+      '<h4 class="card-title">' + park.movieTitle + '</h4>' +
+      '<p class="park-name">' + park.parkName + '</p>' +
+      '<p>' + park.parkAddress + '</p>' +
+      '<a href="#" class="card-link pull-sm-right">Link</a>' +
+      '<p class="text-muted">' + park.showDate + '</p>' +
+      '</div></div>');
 
       // grab content for park's infowindow
       var contentString = '<div id="content">' +
@@ -67,11 +79,6 @@ function initMap() {
       '<img src="#">'  +
       '</div>';
 
-      // create infowindow using content
-      var infowindow = new google.maps.InfoWindow({
-        content: contentString
-      });
-
       // create marker for each park
       var marker = new google.maps.Marker({
         position: park.position,
@@ -79,32 +86,26 @@ function initMap() {
         title: park.movieTitle
       });
 
-      //on marker click show infowindow
-      marker.addListener('click', function() {
-        if(!marker.open){
-          infowindow.open(map, marker);
-          marker.open = true;
-        } else {
+      // on marker click call infowindowCallback
+      google.maps.event.addListener(marker, 'click', infowindowCallback(contentString, marker));
+
+      // create a new infowindow at clicked marker
+      function infowindowCallback(infowindowHtml, marker) {
+        return function() {
+
+          // close any open infowindow
           infowindow.close();
-          marker.open = false;
-        }
 
-        // closes infowindow when map clicked
-        google.maps.event.addListener(map, "click", function() {
-            infowindow.close();
-            marker.open = false;
-        });
+          // update the content of the infowindow before opening it
+          infowindow.setContent(infowindowHtml);
+          infowindow.open(map, marker);
+        };
+      }
+
+      // closes infowindow when map clicked
+      google.maps.event.addListener(map, "click", function() {
+        infowindow.close();
+        marker.open = false;
       });
-
-
-
-      $('#movie-cards').append( '<div class="col-sm-12 col-md-6 col-lg-6 all ' + park.quadrant + ' "><div class="card card-block"> ' +
-      '<h4 class="card-title">' + park.movieTitle + '</h4>' +
-      '<p class="park-name">' + park.parkName + '</p>' +
-      '<p>' + park.parkAddress + '</p>' +
-      '<a href="#" class="card-link pull-sm-right">Link</a>' +
-      '<p class="text-muted">' + park.showDate + '</p>' +
-      '</div></div>');
-
     });
-  }
+}
