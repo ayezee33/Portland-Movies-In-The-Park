@@ -18,6 +18,8 @@ function initMap() {
     center: {lat: 45.52, lng: -122.681944},
     zoom: 12
   });
+  // create global infowindow
+  var infowindow = new google.maps.InfoWindow();
   // for each park
   parks.forEach(function(park) {
     // grab content for park's infowindow
@@ -52,7 +54,7 @@ function initMap() {
         infowindow.open(map, marker);
       };
     }
-    
+
     // create a new infowindow at clicked marker
     function infowindowCallback(infowindowHtml, marker) {
       return function() {
