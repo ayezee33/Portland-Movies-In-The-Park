@@ -88,6 +88,12 @@ function initMap() {
           infowindow.close();
           marker.open = false;
         }
+
+        // closes infowindow when click map
+        google.maps.event.addListener(map, "click", function() {
+            infowindow.close();
+            marker.open = false;
+        });
       });
     });
   }
