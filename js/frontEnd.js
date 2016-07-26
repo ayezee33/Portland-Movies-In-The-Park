@@ -1,25 +1,14 @@
-$(function() {
-  $("#southwest, #southeast, #northwest, #northeast").click(function() {
+// frontend logic goes below
+
+$(document).ready(function() {
+
+  // if a location button is clicked
+  $(".location-btns button").click(function() {
+
+    //reset the table
     $(".se, .sw, .nw, .ne, .all").hide();
-    $(this).data('clicked', true);
 
-      if ($("#southeast").data('clicked')) {
-        $(".se").toggle();
-        console.log("se");
-        $(this).data('clicked', false);
-      } else if ($("#northeast").data('clicked')) {
-        $(".ne").toggle();
-        console.log("ne");
-        $(this).data('clicked', false);
-      } else if ($("#southwest").data('clicked')) {
-        $(".sw").toggle();
-        console.log("sw");
-        $(this).data('clicked', false);
-      } else if ($("#northwest").data('clicked')) {
-        $(".nw").toggle();
-        console.log("nw");
-        $(this).data('clicked', false);
-      }
-
-    });
+    // and show only the appropriate parks
+    $('.' + $(this).attr('id')).show();
   });
+});
