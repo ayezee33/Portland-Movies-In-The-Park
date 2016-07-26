@@ -49,3 +49,6 @@ footer {
 .park-name {
   font-weight: bold;
 }
+.col-md-6:nth-child(2n+1){
+    clear: both;
+}

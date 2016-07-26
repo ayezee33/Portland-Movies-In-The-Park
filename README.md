@@ -1,12 +1,11 @@
-# _{Application Name}_
+# _Movies in the Park_
 
-#### _{Brief description of application}, {Date of current version}_
-
-#### By _**{List of contributors}**_
+#### _Maps out Movies in the Park in Portland, August 2016_
+#### By _Aaron Porter, Alex Zerbach, April Peng, Tam Nguyen_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_The Portland city site has these_
 
 ## Setup/Installation Requirements
 
