@@ -2,20 +2,16 @@
 
 // backend logic goes below
 
-// override MIME type to grab JSON
-$.ajaxSetup({beforeSend: function(xhr){
-  if (xhr.overrideMimeType)
-  {
-    xhr.overrideMimeType("application/json");
-  }
-}
-});
-
 var parks = [];
 
-// access the JSON data and place into parks array
-$.getJSON('parks.json', function(data) {
-  parks = data.parks;
+$.ajax('./parks.json', {
+  // data: 'parks.json',
+  dataType: "jsonp",
+  crossDomain: true,
+  jsonpCallback: 'jsonpCallback',
+  success: function(data) {
+    parks = data.parks;
+  }
 });
 
 var map;

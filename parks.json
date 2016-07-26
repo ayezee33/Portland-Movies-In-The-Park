@@ -1,4 +1,4 @@
-{ "parks":
+jsonpCallback({ "parks":
           [
             { "parkName": "WoodLawn Park",
               "parkAddress": "NE 13th Ave & Dekum St",
@@ -61,4 +61,4 @@
               "showDate": "Sat, July 23"
             }
           ]
-        }
+});
