@@ -52,8 +52,8 @@ function initMap() {
     var infowindow = new google.maps.InfoWindow();
     // for each park
     parks.forEach(function(park) {
-      // create cards for each park
-      $('#movie-cards').append('<div class="col-sm-12 col-md-6 col-lg-6 all ' + park.quadrant + '">' + '<div class="card card-block"> ' +
+      // grab content for park's infowindow
+      var contentString = '<div class="info-card">' +
       '<h4 class="card-title">' + park.movieTitle + '</h4>' +
       '<span class="label label-default">'+ park.movieYear + '</span>' +
       '<span class="label label-primary">'+ park.movieRating + '</span>' +
@@ -61,16 +61,9 @@ function initMap() {
       '<p>' + park.parkAddress + '</p>' +
       '<a href="#" class="card-link pull-sm-right">View Park</a>' +
       '<p>' + park.showDate + '</p>' +
-      '</div></div>');
-
-      // grab content for park's infowindow
-      var contentString = '<div id="content">' +
-      '<h5>' + park.movieTitle + '</h5>' +
-      '<h5>' + park.showDate + '</h5>' +
-      '<h6>' + park.parkName + '</h6>' +
-      '<h6>' + park.parkAddress + '</h6>' +
-      '<img src="#">'  +
-      '</div>';
+      '</div>'
+      // create cards for each park
+      $('#movie-cards').append('<div class="col-sm-12 col-md-6 col-lg-6 all ' + park.quadrant + '"> <div class="card card-block"> ' + contentString + '</div></div>');
 
       // create marker for each park
       var marker = new google.maps.Marker({
