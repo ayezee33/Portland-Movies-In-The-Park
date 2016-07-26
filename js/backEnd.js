@@ -52,7 +52,6 @@ function initMap() {
         infowindow.open(map, marker);
       };
     }
-    });
     
     // create a new infowindow at clicked marker
     function infowindowCallback(infowindowHtml, marker) {
