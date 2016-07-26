@@ -1,9 +1,9 @@
 // var mapsKey = myKey.apiKey;
 
 // backend logic goes below
-
 var parks = [];
 
+// grab the park.json file
 $.ajax('./parks.json', {
   // data: 'parks.json',
   dataType: "jsonp",
@@ -89,7 +89,7 @@ function initMap() {
           marker.open = false;
         }
 
-        // closes infowindow when click map
+        // closes infowindow when map clicked
         google.maps.event.addListener(map, "click", function() {
             infowindow.close();
             marker.open = false;
