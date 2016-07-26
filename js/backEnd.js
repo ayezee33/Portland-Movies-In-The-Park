@@ -1,8 +1,6 @@
 // var mapsKey = myKey.apiKey;
-
 // backend logic goes below
 var parks = [];
-
 // grab the park.json file
 $.ajax('./parks.json', {
   // data: 'parks.json',
@@ -13,23 +11,19 @@ $.ajax('./parks.json', {
     parks = data.parks;
   }
 });
-
 var map;
-
 // create the initial map centered over Portland
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 45.52, lng: -122.681944},
     zoom: 12
   });
-
   // show the user location with blue icon
   var userIcon = new google.maps.Marker({
     map: map,
     icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
     title: "Your current location"
   });
-
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -54,13 +48,10 @@ function initMap() {
       'Error: The Geolocation service failed.' :
       'Error: Your browser doesn\'t support geolocation.');
     }
-
     // create global infowindow
     var infowindow = new google.maps.InfoWindow();
-
     // for each park
     parks.forEach(function(park) {
-
       // create cards for each park
       $('#movie-cards').append('<div class="col-sm-12 col-md-6 col-lg-6 all ' + park.quadrant + '">' + '<div class="card card-block"> ' +
       '<h4 class="card-title">' + park.movieTitle + '</h4>' +
@@ -87,27 +78,18 @@ function initMap() {
         map: map,
         title: park.movieTitle
       });
-
-      // on marker click call infowindowCallback
-      google.maps.event.addListener(marker, 'click', infowindowCallback(contentString, marker));
-
+      //Create the InfoWindow object just after we initialize the map, and then handle the click event handlers
+      google.maps.event.addListener(marker, 'click', function() {
+         infowindow.setContent(contentString);
+         infowindow.open(map, this);
+      });
       // create a new infowindow at clicked marker
       function infowindowCallback(infowindowHtml, marker) {
         return function() {
-
-          // close any open infowindow
-          infowindow.close();
-
           // update the content of the infowindow before opening it
           infowindow.setContent(infowindowHtml);
           infowindow.open(map, marker);
         };
       }
-
-      // closes infowindow when map clicked
-      google.maps.event.addListener(map, "click", function() {
-        infowindow.close();
-        marker.open = false;
-      });
     });
 }
