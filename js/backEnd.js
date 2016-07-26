@@ -31,29 +31,29 @@ function initMap() {
   });
 
   // Try HTML5 geolocation.
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
-
-      userIcon.setPosition(pos);
-      map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, userIcon, map.getCenter());
-    });
-  } else {
+//  if (navigator.geolocation) {
+//    navigator.geolocation.getCurrentPosition(function(position) {
+//      var pos = {
+//        lat: position.coords.latitude,
+//        lng: position.coords.longitude,
+//      };
+//
+//      userIcon.setPosition(pos);
+//      map.setCenter(pos);
+//    }, function() {
+//      handleLocationError(true, userIcon, map.getCenter());
+//    });
+//  } else {
     // Browser doesn't support Geolocation
-    handleLocationError(false, userIcon, map.getCenter());
-  }
+//    handleLocationError(false, userIcon, map.getCenter());
+//  }
 
-  function handleLocationError(browserHasGeolocation, userIcon, pos) {
-    userIcon.setPosition(pos);
-    userIcon.setContent(browserHasGeolocation ?
-      'Error: The Geolocation service failed.' :
-      'Error: Your browser doesn\'t support geolocation.');
-    }
+//  function handleLocationError(browserHasGeolocation, userIcon, pos) {
+//    userIcon.setPosition(pos);
+//    userIcon.setContent(browserHasGeolocation ?
+//      'Error: The Geolocation service failed.' :
+//      'Error: Your browser doesn\'t support geolocation.');
+//    }
 
     // create global infowindow
     var infowindow = new google.maps.InfoWindow();
